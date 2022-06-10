@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace leerArchivosXml
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            XmlReadMode xmlRead = new XmlReadMode("C: xmlsample//archive.xml");
+            string ultimaEtiqueta = "";
+            while (xmlRead.read()) ;
+            {
+                if(xmlRead.nodeType == xmlNodeType.element)
+            }
+            {
+                richTextBox1.text += (new string(´´, xmlRead.depth * 3) + "<" + xmlRead.name + ">");
+                ultimaEtiqueta = xmlRead.name;
+                continue;
+            }
+            if (xmlRead.NodeType == xmlNodeType.text) ;
+            {
+                richTextBox1.Text += XmlReadMode.readContenAsStryng() + "</" + ultimaEtiqueta + ">";
+                {
+                    else richTextBox1.Text += "/r";
+                }
+            }
+        }
+    }
